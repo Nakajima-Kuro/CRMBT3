@@ -45,7 +45,7 @@ $error="Your current password is not valid.";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>User Change Password</title>
+	<title>Đổi mật khẩu</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -107,7 +107,7 @@ return true;
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Change Password</h2>
+						<h2 class="page-title">Đổi mật khẩu</h2>
 
 						<div class="row">
 							<div class="col-md-10">
@@ -117,10 +117,10 @@ return true;
 										<form method="post" name="chngpwd" class="form-horizontal" onSubmit="return valid();">
 										
 											
-  	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+  	        	  <?php if($error){?><div class="errorWrap"><strong>LỖI</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+				else if($msg){?><div class="succWrap"><strong>THÀNH CÔNG</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 											<div class="form-group">
-												<label class="col-sm-4 control-label">Current Password</label>
+												<label class="col-sm-4 control-label">Mật khẩu hiện tại</label>
 												<div class="col-sm-8">
 													<input type="password" class="form-control" name="password" id="password" required>
 												</div>
@@ -128,7 +128,7 @@ return true;
 											<div class="hr-dashed"></div>
 											
 											<div class="form-group">
-												<label class="col-sm-4 control-label">New Password</label>
+												<label class="col-sm-4 control-label">Mật khẩu mới</label>
 												<div class="col-sm-8">
 													<input type="password" class="form-control" name="newpassword" id="newpassword" required>
 												</div>
@@ -136,7 +136,7 @@ return true;
 											<div class="hr-dashed"></div>
 
 											<div class="form-group">
-												<label class="col-sm-4 control-label">Confirm Password</label>
+												<label class="col-sm-4 control-label">Xác nhận mật khẩu</label>
 												<div class="col-sm-8">
 													<input type="password" class="form-control" name="confirmpassword" id="confirmpassword" required>
 												</div>
@@ -148,7 +148,7 @@ return true;
 											<div class="form-group">
 												<div class="col-sm-8 col-sm-offset-4">
 								
-													<button class="btn btn-primary" name="submit" type="submit">Save changes</button>
+													<button class="btn btn-primary" name="submit" type="submit">Lưu thay đổi</button>
 												</div>
 											</div>
 

@@ -51,12 +51,12 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold mt-4x">Admin Login</h1>
+						<h1 class="text-center text-bold mt-4x">Đăng nhập quản lý</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
 
-									<label for="" class="text-uppercase text-sm">Your Username </label>
+									<label for="" class="text-uppercase text-sm">YTên đăng nhập </label>
 									<input type="text" placeholder="Username" name="username" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm">Password</label>

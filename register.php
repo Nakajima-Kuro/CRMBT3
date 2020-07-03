@@ -20,7 +20,7 @@ if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
 		$image=$final_file;
     }
-$notitype='Create Account';
+$notitype='Tạo tài khoản mới';
 $reciver='Admin';
 $sender=$email;
 
@@ -105,12 +105,12 @@ $error="Something went wrong. Please try again";
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="text-center text-bold mt-2x">Register</h1>
+						<h1 class="text-center text-bold mt-2x">Đăng ký</h1>
                         <div class="hr-dashed"></div>
 						<div class="well row pt-2x pb-3x bk-light text-center">
                          <form method="post" class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();">
                             <div class="form-group">
-                            <label class="col-sm-1 control-label">Name<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Tên<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <input type="text" name="name" class="form-control" required>
                             </div>
@@ -121,46 +121,46 @@ $error="Something went wrong. Please try again";
                             </div>
 
                             <div class="form-group">
-                            <label class="col-sm-1 control-label">Password<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Mật khẩu<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <input type="password" name="password" class="form-control" id="password" required >
                             </div>
 
-                            <label class="col-sm-1 control-label">Designation<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Chức vụ<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <input type="text" name="designation" class="form-control" required>
                             </div>
                             </div>
 
                              <div class="form-group">
-                            <label class="col-sm-1 control-label">Gender<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Giới tính<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <select name="gender" class="form-control" required>
-                            <option value="">Select</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="">Chọn</option>
+                            <option value="Male">Nam</option>
+                            <option value="Female">Nữ</option>
                             </select>
                             </div>
 
-                            <label class="col-sm-1 control-label">Phone<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Điện thoại<span style="color:red">*</span></label>
                             <div class="col-sm-5">
-                            <input type="number" name="mobileno" class="form-control" required>
+                            <input type="text" name="mobileno" class="form-control" required>
                             </div>
                             </div>
 
                              <div class="form-group">
-                            <label class="col-sm-1 control-label">Avtar<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Ảnh đại diện<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <div><input type="file" name="image" class="form-control"></div>
                             </div>
                             </div>
 
 								<br>
-                                <button class="btn btn-primary" name="submit" type="submit">Register</button>
+                                <button class="btn btn-primary" name="submit" type="submit">Đăng ký</button>
                                 </form>
                                 <br>
                                 <br>
-								<p>Already Have Account? <a href="index.php" >Signin</a></p>
+								<p>Đã có tài khoản? <a href="index.php" >Đăng nhập</a></p>
 							</div>
 						</div>
 				</div>

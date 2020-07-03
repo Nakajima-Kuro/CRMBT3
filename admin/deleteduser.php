@@ -73,11 +73,11 @@ else{
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Deleted Users</h2>
+						<h2 class="page-title">Nhân viên bị xoá</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">List Users</div>
+							<div class="panel-heading">Danh sách nhân viên</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
@@ -86,7 +86,7 @@ else{
 										<tr>
 										       <th>#</th>
 												<th>Email</th>
-												<th>Delete Time</th>
+												<th>Thời gian xoá</th>
 										</tr>
 									</thead>
 									

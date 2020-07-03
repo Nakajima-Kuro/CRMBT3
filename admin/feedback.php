@@ -58,7 +58,7 @@ if(isset($_REQUEST['unconfirm']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Manage Feedback</title>
+	<title>Quản lý phản hồi</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -110,11 +110,11 @@ if(isset($_REQUEST['unconfirm']))
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Manage Feedback</h2>
+						<h2 class="page-title">Quản lý phản hồi</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">List Users</div>
+							<div class="panel-heading">Danh sách nhân viên</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
@@ -122,11 +122,11 @@ if(isset($_REQUEST['unconfirm']))
 									<thead>
 										<tr>
 										       <th>#</th>
-												<th>User Email</th>
-												<th>Title</th>
-                                                <th>Feedback</th>
-                                                <th>Attachment</th>
-											    <th>Action</th>	
+												<th>Email</th>
+												<th>Tiêu đề</th>
+                                                <th>Phản hồi</th>
+                                                <th>Đính kèm</th>
+											    <th>Hoạt động</th>	
 										</tr>
 									</thead>
 									

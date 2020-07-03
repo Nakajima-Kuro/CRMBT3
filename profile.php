@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 error_reporting(0);
 include('includes/config.php');
@@ -39,7 +39,7 @@ if(isset($_POST['submit']))
 	$query->execute();
 	$msg="Information Updated Successfully";
 }    
-?>
+?> -->
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -52,7 +52,7 @@ if(isset($_POST['submit']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Edit Profile</title>
+	<title>Thông tin cá nhân</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -126,43 +126,35 @@ if(isset($_POST['submit']))
 	</div>
 	<div class="col-sm-4 text-center">
 		<img src="images/<?php echo htmlentities($result->image);?>" style="width:200px; border-radius:50%; margin:10px;">
-		<input type="file" name="image" class="form-control">
-		<input type="hidden" name="image" class="form-control" value="<?php echo htmlentities($result->image);?>">
 	</div>
 	<div class="col-sm-4">
 	</div>
 </div>
 
 <div class="form-group">
-	<label class="col-sm-2 control-label">Name<span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label">Họ tên</label>
 	<div class="col-sm-4">
-	<input type="text" name="name" class="form-control" required value="<?php echo htmlentities($result->name);?>">
+	<input type="text" name="name" class="form-control" value="<?php echo htmlentities($result->name);?>" disabled>
 	</div>
 
-	<label class="col-sm-2 control-label">Email<span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label">Email</label>
 	<div class="col-sm-4">
-	<input type="email" name="email" class="form-control" required value="<?php echo htmlentities($result->email);?>">
+	<input type="email" name="email" class="form-control" value="<?php echo htmlentities($result->email);?>" disabled>
 	</div>
 </div>
 
 <div class="form-group">
-	<label class="col-sm-2 control-label">Mobile<span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label">Số điện thoại</label>
 	<div class="col-sm-4">
-	<input type="text" name="mobile" class="form-control" required value="<?php echo htmlentities($result->mobile);?>">
+	<input type="text" name="mobile" class="form-control" value="<?php echo htmlentities($result->mobile);?>" disabled>
 	</div>
 
-	<label class="col-sm-2 control-label">Designation<span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label">Chức vụ</label>
 	<div class="col-sm-4">
-	<input type="text" name="designation" class="form-control" required value="<?php echo htmlentities($result->designation);?>">
+	<input type="text" name="designation" class="form-control" value="<?php echo htmlentities($result->designation);?>" disabled>
 	</div>
 </div>
 <input type="hidden" name="editid" class="form-control" required value="<?php echo htmlentities($result->id);?>">
-
-<div class="form-group">
-	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit">Save Changes</button>
-	</div>
-</div>
 
 </form>
 									</div>

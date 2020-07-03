@@ -13,11 +13,11 @@ if(strlen($_SESSION['alogin'])==0)
 									<thead>
 										<tr>
 										<th>#</th>
-											<th>Name</th>
+											<th>Tên</th>
 											<th>Email</th>
-											<th>Gender</th>
-											<th>Phone</th>
-											<th>Designation</th>
+											<th>Giới tính</th>
+											<th>Điện thoại</th>
+											<th>Position</th>
 										</tr>
 									</thead>
 

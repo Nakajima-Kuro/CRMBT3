@@ -118,7 +118,7 @@ if(isset($_REQUEST['unconfirm']))
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Manage Users</h2>
+						<h2 class="page-title">Quản lý nhân viên</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
@@ -130,13 +130,13 @@ if(isset($_REQUEST['unconfirm']))
 									<thead>
 										<tr>
 										<th>#</th>
-												<th>Image</th>
-                                                <th>Name</th>
+												<th>Ảnh hồ sơ</th>
+                                                <th>Tên</th>
                                                 <th>Email</th>
-                                                <th>Gender</th>
-                                                <th>Phone</th>
+                                                <th>Giới tính</th>
+                                                <th>Điện thoại</th>
                                                 <th>Designation</th>
-                                                <th>Account</th>
+                                                <th>Tài khoản</th>
 											<th>Action</th>	
 										</tr>
 									</thead>

@@ -21,7 +21,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Messages</title>
+	<title>Tin nhắn</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -73,11 +73,11 @@ else{
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Messages</h2>
+						<h2 class="page-title">Tin nhắn</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">List Users</div>
+							<div class="panel-heading">Danh sách nhân viên</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
@@ -85,8 +85,8 @@ else{
 									<thead>
 										<tr>
 										       <th>#</th>
-												<th>User</th>
-												<th>Message</th>
+												<th>Nhân viên</th>
+												<th>Tin nhắn</th>
 										</tr>
 									</thead>
 									

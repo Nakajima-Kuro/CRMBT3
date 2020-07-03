@@ -120,7 +120,7 @@ return true;
   	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 											<div class="form-group">
-												<label class="col-sm-4 control-label">Current Password</label>
+												<label class="col-sm-4 control-label">Mật khẩu hiện tại</label>
 												<div class="col-sm-8">
 													<input type="password" class="form-control" name="password" id="password" required>
 												</div>
@@ -128,7 +128,7 @@ return true;
 											<div class="hr-dashed"></div>
 											
 											<div class="form-group">
-												<label class="col-sm-4 control-label">New Password</label>
+												<label class="col-sm-4 control-label">Mật khẩu mới</label>
 												<div class="col-sm-8">
 													<input type="password" class="form-control" name="newpassword" id="newpassword" required>
 												</div>
@@ -136,7 +136,7 @@ return true;
 											<div class="hr-dashed"></div>
 
 											<div class="form-group">
-												<label class="col-sm-4 control-label">Confirm Password</label>
+												<label class="col-sm-4 control-label">Xác nhận mật khẩu</label>
 												<div class="col-sm-8">
 													<input type="password" class="form-control" name="confirmpassword" id="confirmpassword" required>
 												</div>
@@ -148,7 +148,7 @@ return true;
 											<div class="form-group">
 												<div class="col-sm-8 col-sm-offset-4">
 								
-													<button class="btn btn-primary" name="submit" type="submit">Save changes</button>
+													<button class="btn btn-primary" name="submit" type="submit">Lưu thay đổi</button>
 												</div>
 											</div>
 

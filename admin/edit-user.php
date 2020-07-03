@@ -117,18 +117,18 @@ if(isset($_POST['submit']))
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title">Edit User : <?php echo htmlentities($result->name); ?></h3>
+						<h3 class="page-title">Sửa người dùng : <?php echo htmlentities($result->name); ?></h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Edit Info</div>
-<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+									<div class="panel-heading">Sửa thông tin</div>
+<?php if($error){?><div class="errorWrap"><strong>LỖI</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+				else if($msg){?><div class="succWrap"><strong>THÀNH CÔNG</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
 									<div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data" name="imgform">
 <div class="form-group">
-<label class="col-sm-2 control-label">Name<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Tên<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="text" name="name" class="form-control" required value="<?php echo htmlentities($result->name);?>">
 </div>
@@ -139,7 +139,7 @@ if(isset($_POST['submit']))
 </div>
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Gender<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Giới tính<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <select name="gender" class="form-control" required>
                             <option value="">Select</option>
@@ -147,7 +147,7 @@ if(isset($_POST['submit']))
                             <option value="Female">Female</option>
                             </select>
 </div>
-<label class="col-sm-2 control-label">Designation<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Chức vụ<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="text" name="designation" class="form-control" required value="<?php echo htmlentities($result->designation);?>">
 </div>
@@ -155,12 +155,12 @@ if(isset($_POST['submit']))
 
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Image<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Ảnh<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="file" name="image" class="form-control">
 </div>
 
-<label class="col-sm-2 control-label">Mobile No.<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Điện thoại No.<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="number" name="mobileno" class="form-control" required value="<?php echo htmlentities($result->mobile);?>">
 </div>
@@ -177,7 +177,7 @@ if(isset($_POST['submit']))
 
 <div class="form-group">
 	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit">Save Changes</button>
+		<button class="btn btn-primary" name="submit" type="submit">Lưu thay đổi</button>
 	</div>
 </div>
 

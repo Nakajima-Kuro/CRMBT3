@@ -17,7 +17,7 @@ else{
   {	
 	$reciver=$_POST['email'];
     $message=$_POST['message'];
-	$notitype='Send Message';
+	$notitype='Gửi tin nhắn';
 	$sender='Admin';
 	
     $sqlnoti="insert into notification (notiuser,notireciver,notitype) values (:notiuser,:notireciver,:notitype)";

@@ -50,7 +50,7 @@ else{
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Dashboard</h2>
+						<h2 class="page-title">Trang chủ</h2>
 						
 						<div class="row">
 							<div class="col-md-12">
@@ -67,10 +67,10 @@ $results=$query->fetchAll(PDO::FETCH_OBJ);
 $bg=$query->rowCount();
 ?>
 													<div class="stat-panel-number h1 "><?php echo htmlentities($bg);?></div>
-													<div class="stat-panel-title text-uppercase">Total Users</div>
+													<div class="stat-panel-title text-uppercase">Tổng số nhân viên</div>
 												</div>
 											</div>
-											<a href="userlist.php" class="block-anchor panel-footer">Full Detail <i class="fa fa-arrow-right"></i></a>
+											<a href="userlist.php" class="block-anchor panel-footer">Thông tin chi tiết<i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -88,10 +88,10 @@ $results1=$query1->fetchAll(PDO::FETCH_OBJ);
 $regbd=$query1->rowCount();
 ?>
 													<div class="stat-panel-number h1 "><?php echo htmlentities($regbd);?></div>
-													<div class="stat-panel-title text-uppercase">Feedback Messages</div>
+													<div class="stat-panel-title text-uppercase">Tin nhắn phản hồi</div>
 												</div>
 											</div>
-											<a href="feedback.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>
+											<a href="feedback.php" class="block-anchor panel-footer text-center">Thông tin chi tiết &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 
@@ -110,10 +110,10 @@ $results12=$query12->fetchAll(PDO::FETCH_OBJ);
 $regbd2=$query12->rowCount();
 ?>
 													<div class="stat-panel-number h1 "><?php echo htmlentities($regbd2);?></div>
-													<div class="stat-panel-title text-uppercase">Notifications</div>
+													<div class="stat-panel-title text-uppercase">Thông báo</div>
 												</div>
 											</div>
-											<a href="notification.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>
+											<a href="notification.php" class="block-anchor panel-footer text-center">Thông tin chi tiết &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -128,10 +128,10 @@ $results6=$query6->fetchAll(PDO::FETCH_OBJ);
 $query=$query6->rowCount();
 ?>
 													<div class="stat-panel-number h1 "><?php echo htmlentities($query);?></div>
-													<div class="stat-panel-title text-uppercase">Deleted Users</div>
+													<div class="stat-panel-title text-uppercase">Nhân viên bị xoá</div>
 												</div>
 											</div>
-											<a href="deleteduser.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>
+											<a href="deleteduser.php" class="block-anchor panel-footer text-center">Thông tin chi tiết &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 							

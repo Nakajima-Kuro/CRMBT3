@@ -89,18 +89,18 @@ if(isset($_POST['submit']))
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title">Manage Admin</h3>
+						<h3 class="page-title">Quản lý Admin</h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Edit Info</div>
-<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+									<div class="panel-heading">Sửa thông tin</div>
+<?php if($error){?><div class="errorWrap"><strong>LỖI</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+				else if($msg){?><div class="succWrap"><strong>THÀNH CÔNG</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
 									<div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 <div class="form-group">
-<label class="col-sm-2 control-label">Username<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Tên đăng nhập<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="text" name="name" class="form-control" required value="<?php echo htmlentities($result->username);?>">
 </div>
@@ -113,7 +113,7 @@ if(isset($_POST['submit']))
 
 <div class="form-group">
 	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit">Save Changes</button>
+		<button class="btn btn-primary" name="submit" type="submit">Lưu thay đổi</button>
 	</div>
 </div>
 
