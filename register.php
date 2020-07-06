@@ -20,7 +20,7 @@ if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
 		$image=$final_file;
     }
-$notitype='Create Account';
+$notitype='Tạo tài khoản';
 $reciver='Admin';
 $sender=$email;
 
@@ -44,12 +44,12 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-echo "<script type='text/javascript'>alert('Registration Sucessfull!');</script>";
+echo "<script type='text/javascript'>alert('Đăng kí thành công!');</script>";
 echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
 }
 else 
 {
-$error="Something went wrong. Please try again";
+$error="Có lỗi xảy ra, vui lòng thử lại.";
 }
 
 }
@@ -73,7 +73,8 @@ $error="Something went wrong. Please try again";
 	<link rel="stylesheet" href="css/bootstrap-select.css">
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
-	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/css/login.css">
     <script type="text/javascript">
 
 	function validate()
@@ -92,7 +93,7 @@ $error="Something went wrong. Please try again";
                 
                 }
             }
-            alert("Image Extension Not Valid (Use Jpg,jpeg)");
+            alert("Định dạng ảnh ko hợp lệ (chỉ dùng Jpg,jpeg)");
             return false;
         }
         
@@ -105,12 +106,11 @@ $error="Something went wrong. Please try again";
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="text-center text-bold mt-2x">Register</h1>
-                        <div class="hr-dashed"></div>
-						<div class="well row pt-2x pb-3x bk-light text-center">
+						<h1 class="text-center text-bold text-white mt-5x">Đăng kí</h1>
+						<div class="row pt-2x pb-3x mt-3x text-center">
                          <form method="post" class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();">
                             <div class="form-group">
-                            <label class="col-sm-1 control-label">Name<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Họ Tên<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <input type="text" name="name" class="form-control" required>
                             </div>
@@ -121,28 +121,28 @@ $error="Something went wrong. Please try again";
                             </div>
 
                             <div class="form-group">
-                            <label class="col-sm-1 control-label">Password<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Mật khẩu<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <input type="password" name="password" class="form-control" id="password" required >
                             </div>
 
-                            <label class="col-sm-1 control-label">Designation<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Chức vụ<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <input type="text" name="designation" class="form-control" required>
                             </div>
                             </div>
 
                              <div class="form-group">
-                            <label class="col-sm-1 control-label">Gender<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Giới tính<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <select name="gender" class="form-control" required>
-                            <option value="">Select</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="">CHọn</option>
+                            <option value="Male">Nam</option>
+                            <option value="Female">Nữ</option>
                             </select>
                             </div>
 
-                            <label class="col-sm-1 control-label">Phone<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Số điên thoại<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <input type="text" name="mobileno" class="form-control" required>
                             </div>
@@ -156,11 +156,11 @@ $error="Something went wrong. Please try again";
                             </div>
 
 								<br>
-                                <button class="btn btn-primary" name="submit" type="submit">Register</button>
+                                <button class="btn btn-primary" name="submit" type="submit">Đăng kí</button>
                                 </form>
                                 <br>
                                 <br>
-								<p>Already Have Account? <a href="index.php" >Signin</a></p>
+								<p class="text-white">Đã có tài khoản? <a href="index.php" >Đăng nhập</a></p>
 							</div>
 						</div>
 				</div>
