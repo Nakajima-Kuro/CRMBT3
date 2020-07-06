@@ -60,10 +60,10 @@ echo "<script type='text/javascript'> document.location = 'profile.php'; </scrip
 								<form method="post">
 
 									<label for="" class="text-uppercase text-sm">Tên đăng nhập</label>
-									<input type="text" placeholder="Username" name="username" class="form-control mb" required>
+									<input type="text" placeholder="Tên đăng nhập" name="username" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm">Mật khẩu</label>
-									<input type="password" placeholder="Password" name="password" class="form-control mb" required>
+									<input type="password" placeholder="Mật khẩu" name="password" class="form-control mb" required>
 									<button class="btn btn-primary btn-block" name="login" type="submit">ĐĂNG NHẬP</button>
 								</form>
 								<br>

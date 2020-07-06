@@ -70,7 +70,7 @@ $bg=$query->rowCount();
 													<div class="stat-panel-title text-uppercase">Tổng số nhân viên</div>
 												</div>
 											</div>
-											<a href="userlist.php" class="block-anchor panel-footer">Thông tin chi tiết<i class="fa fa-arrow-right"></i></a>
+											<a href="userlist.php" class="block-anchor panel-footer text-center">Thông tin chi tiết<i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 									<div class="col-md-3">

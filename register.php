@@ -92,7 +92,7 @@ $error="Có lỗi xảy ra. Vui lòng thử lại sau.";
                 
                 }
             }
-            alert("Image Extension Not Valid (Use Jpg,jpeg)");
+            alert("Đinh dạng file ảnh không đúng (Sử dụng Jpg,jpeg)");
             return false;
         }
         
