@@ -49,7 +49,7 @@ echo "<script type='text/javascript'> document.location = 'index.php'; </script>
 }
 else 
 {
-$error="Something went wrong. Please try again";
+$error="Có lỗi xảy ra. Vui lòng thử lại sau.";
 }
 
 }

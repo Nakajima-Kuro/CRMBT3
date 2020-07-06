@@ -17,7 +17,7 @@ if(strlen($_SESSION['alogin'])==0)
 											<th>Email</th>
 											<th>Giới tính</th>
 											<th>Điện thoại</th>
-											<th>Position</th>
+											<th>Vị trí</th>
 										</tr>
 									</thead>
 

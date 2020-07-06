@@ -56,7 +56,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
 
-									<label for="" class="text-uppercase text-sm">YTên đăng nhập </label>
+									<label for="" class="text-uppercase text-sm">Tên đăng nhập </label>
 									<input type="text" placeholder="Username" name="username" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm">Password</label>

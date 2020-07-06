@@ -43,7 +43,7 @@ if(isset($_POST['submit']))
 	$query-> bindParam(':description', $description, PDO::PARAM_STR);
 	$query-> bindParam(':attachment', $attachment, PDO::PARAM_STR);
     $query->execute(); 
-	$msg="Feedback Send";
+	$msg="Gửi phản hồi";
 }    
 ?>
 
@@ -121,8 +121,8 @@ if(isset($_POST['submit']))
                             <h2>Gửi phản hồi đến admin</h2>
 								<div class="panel panel-default">
 									<div class="panel-heading">Đơn phản hồi</div>
-<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+<?php if($error){?><div class="errorWrap"><strong>LỖI</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+				else if($msg){?><div class="succWrap"><strong>THÀNH CÔNG</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
 <div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">

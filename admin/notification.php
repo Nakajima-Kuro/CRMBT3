@@ -87,7 +87,7 @@ if(isset($_POST['submit']))
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Notification</div>
+									<div class="panel-heading">Thông báo</div>
 									   <div class="panel-body">
 <?php 
 $reciver = 'Admin';

@@ -61,7 +61,7 @@ if(isset($_POST['submit']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Edit User</title>
+	<title>Sửa nhân viên</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -142,9 +142,9 @@ if(isset($_POST['submit']))
 <label class="col-sm-2 control-label">Giới tính<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <select name="gender" class="form-control" required>
-                            <option value="">Select</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="">Chọn</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
                             </select>
 </div>
 <label class="col-sm-2 control-label">Chức vụ<span style="color:red">*</span></label>

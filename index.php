@@ -67,7 +67,7 @@ echo "<script type='text/javascript'> document.location = 'profile.php'; </scrip
 									<button class="btn btn-primary btn-block" name="login" type="submit">ĐĂNG NHẬP</button>
 								</form>
 								<br>
-								<p>Don't Have an Account? <a href="register.php" >Đăng ký</a></p>
+								<p>Bạn chưa có tài khoản? <a href="register.php" >Đăng ký</a></p>
 							</div>
 						</div>
 					</div>

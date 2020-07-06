@@ -38,7 +38,7 @@ if(isset($_REQUEST['unconfirm']))
 	$query -> bindParam(':status',$memstatus, PDO::PARAM_STR);
 	$query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
 	$query -> execute();
-	$msg="Changes Sucessfully";
+	$msg="Cập nhật thành công";
 	}
 
 

@@ -33,7 +33,7 @@ else{
 	$query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
 	$query-> bindParam(':description', $message, PDO::PARAM_STR);
     $query->execute(); 
-	$msg="Feedback Send";
+	$msg="Gửi phản hồi";
   }
 ?>
 
@@ -48,7 +48,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Edit Profile</title>
+	<title>Sửa hồ sơ</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -107,11 +107,11 @@ else{
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-12">
-                            <h2>Reply Feedback</h2>
+                            <h2>Trả lời phản hồi</h2>
 								<div class="panel panel-default">
-									<div class="panel-heading">Edit Info</div>
-<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+									<div class="panel-heading">Sửa thông tin</div>
+<?php if($error){?><div class="errorWrap"><strong>LỖI</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+				else if($msg){?><div class="succWrap"><strong>THÀNH CÔNG</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
 									<div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
@@ -124,7 +124,7 @@ else{
 </div>
 
 <div class="form-group">
-	<label class="col-sm-2 control-label">Message<span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label">Tin nhắn<span style="color:red">*</span></label>
 	<div class="col-sm-6">
 	<textarea name="message" class="form-control" cols="30" rows="10"></textarea>
 	</div>
@@ -134,7 +134,7 @@ else{
 
 <div class="form-group">
 	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit">Send Reply</button>
+		<button class="btn btn-primary" name="submit" type="submit">Gửi phản hồi</button>
 	</div>
 </div>
 

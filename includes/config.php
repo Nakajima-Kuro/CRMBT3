@@ -2,7 +2,7 @@
 // DB credentials.
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASS','');
+define('DB_PASS','1qazXSW@');
 define('DB_NAME','user_management');
 // Establish database connection.
 try
