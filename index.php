@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
 	<meta name="author" content="">
 
 
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-social.css">

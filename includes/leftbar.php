@@ -1,6 +1,6 @@
 	<nav class="ts-sidebar">
-			<ul class="ts-sidebar-menu">
-			
+		<ul class="ts-sidebar-menu">
+
 			<li class="ts-label">Main</li>
 			<li><a href="profile.php"><i class="fa fa-user"></i> &nbsp;Thông tin cá nhân</a>
 			</li>
@@ -10,8 +10,9 @@
 			</li>
 			<li><a href="messages.php"><i class="fa fa-envelope"></i> &nbsp;Tin nhắn</a>
 			</li>
-			</ul>
-			<p class="text-center" style="color:#ffffff; margin-top: 100px;">All right served</p>
-		</nav>
-
-		
+			</li>
+			<li><a href="meeting.php"><i class="fa fa-users"></i> &nbsp;Họp onine</a>
+			</li>
+		</ul>
+		<p class="text-center" style="color:#ffffff; margin-top: 100px;">All right served</p>
+	</nav>
