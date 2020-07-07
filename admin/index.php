@@ -43,6 +43,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/css/login.css">
 </head>
 
 <body>
@@ -51,8 +52,8 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold mt-4x">Admin Login</h1>
-						<div class="well row pt-2x pb-3x bk-light">
+						<h1 class="text-center text-bold text-white mt-4x">Admin Login</h1>
+						<div class="row pt-2x pb-3x">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
 

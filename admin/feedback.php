@@ -58,7 +58,7 @@ if(isset($_REQUEST['unconfirm']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Manage Feedback</title>
+	<title>Phản hồi</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -110,11 +110,11 @@ if(isset($_REQUEST['unconfirm']))
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Manage Feedback</h2>
+						<h2 class="page-title">Phản hồi</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">List Users</div>
+							<div class="panel-heading">Danh sách</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
@@ -122,11 +122,10 @@ if(isset($_REQUEST['unconfirm']))
 									<thead>
 										<tr>
 										       <th>#</th>
-												<th>User Email</th>
-												<th>Title</th>
-                                                <th>Feedback</th>
-                                                <th>Attachment</th>
-											    <th>Action</th>	
+												<th>Email nhân viên</th>
+												<th>Tiêu đề</th>
+                                                <th>Phản hồi</th>
+											    <th>Hành động</th>	
 										</tr>
 									</thead>
 									
@@ -149,8 +148,6 @@ foreach($results as $result)
                                             <td><?php echo htmlentities($result->sender);?></td>
 											<td><?php echo htmlentities($result->title);?></td>
                                             <td><?php echo htmlentities($result->feedbackdata);?></td>
-                                            <td><a href="../attachment/<?php echo htmlentities($result->attachment);?>" ><?php echo htmlentities($result->attachment);?></a></td>
-											
 <td>
 <a href="sendreply.php?reply=<?php echo $result->sender;?>">&nbsp; <i class="fa fa-mail-reply"></i></a>&nbsp;&nbsp;
 </td>

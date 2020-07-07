@@ -133,11 +133,6 @@ if(isset($_POST['submit']))
 	<div class="col-sm-4">
 	<input type="text" name="title" class="form-control" required>
 	</div>
-
-	<label class="col-sm-2 control-label">Tệp đính kèm<span style="color:red"></span></label>
-	<div class="col-sm-4">
-	<input type="file" name="attachment" class="form-control">
-	</div>
 </div>
 
 <div class="form-group">
