@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
 	$query-> bindParam(':name', $name, PDO::PARAM_STR);
 	$query-> bindParam(':email', $email, PDO::PARAM_STR);
 	$query->execute();
-	$msg="Information Updated Successfully";
+	$msg="Cập nhật thành công";
 }    
 ?>
 

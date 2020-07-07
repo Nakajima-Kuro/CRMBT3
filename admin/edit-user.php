@@ -143,8 +143,8 @@ if(isset($_POST['submit']))
 <div class="col-sm-4">
 <select name="gender" class="form-control" required>
                             <option value="">Chọn</option>
-                            <option value="Nam">Nam</option>
-                            <option value="Nữ">Nữ</option>
+                            <option value="Male">Nam</option>
+                            <option value="Female">Nữ</option>
                             </select>
 </div>
 <label class="col-sm-2 control-label">Chức vụ<span style="color:red">*</span></label>
@@ -160,7 +160,7 @@ if(isset($_POST['submit']))
 <input type="file" name="image" class="form-control">
 </div>
 
-<label class="col-sm-2 control-label">Điện thoại No.<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Điện thoại<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="number" name="mobileno" class="form-control" required value="<?php echo htmlentities($result->mobile);?>">
 </div>

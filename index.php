@@ -19,7 +19,7 @@ $_SESSION['alogin']=$_POST['username'];
 echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
 } else{
   
-  echo "<script>alert('Invalid Details Or Account Not Confirmed');</script>";
+  echo "<script>alert('Tài khoản hoặc mật khẩu không đúng');</script>";
 
 }
 

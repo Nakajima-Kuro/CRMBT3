@@ -43,6 +43,7 @@ echo '
 <td>'.$Designation= $result->designation.'</td> 					
 </tr>  
 ';
+
 header("Content-type: application/octet-stream");
 header("Content-Disposition: attachment; filename=".$filename."-report.xls");
 header("Pragma: no-cache");

@@ -14,7 +14,7 @@ $sql = "delete from users WHERE id=:id";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':id',$id, PDO::PARAM_STR);
 $query -> execute();
-$msg="Data Deleted successfully";
+$msg="Xoá nhân viên thành công";
 }
 
 if(isset($_REQUEST['unconfirm']))
@@ -26,7 +26,7 @@ if(isset($_REQUEST['unconfirm']))
 	$query -> bindParam(':status',$memstatus, PDO::PARAM_STR);
 	$query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
 	$query -> execute();
-	$msg="Changes Sucessfully";
+	$msg="Cập nhật thành công";
 	}
 
 	if(isset($_REQUEST['confirm']))

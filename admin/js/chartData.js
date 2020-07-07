@@ -1,5 +1,5 @@
 var swirlData = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: '<?php echo $quẻy',
     datasets: [
         {
             label: "My First dataset",

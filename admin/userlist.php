@@ -22,7 +22,7 @@ $query2 = $dbh->prepare($sql2);
 $query2 -> bindParam(':name',$name, PDO::PARAM_STR);
 $query2 -> execute();
 
-$msg="Data Deleted successfully";
+$msg="Xoá nhân viên thành công";
 }
 
 if(isset($_REQUEST['unconfirm']))
@@ -34,7 +34,7 @@ if(isset($_REQUEST['unconfirm']))
 	$query -> bindParam(':status',$memstatus, PDO::PARAM_STR);
 	$query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
 	$query -> execute();
-	$msg="Changes Sucessfully";
+	$msg="Cập nhật thành công";
 	}
 
 	if(isset($_REQUEST['confirm']))
@@ -46,7 +46,7 @@ if(isset($_REQUEST['unconfirm']))
 	$query -> bindParam(':status',$memstatus, PDO::PARAM_STR);
 	$query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
 	$query -> execute();
-	$msg="Changes Sucessfully";
+	$msg="Cập nhật thành công";
 	}
 
 
@@ -66,7 +66,7 @@ if(isset($_REQUEST['unconfirm']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Manage Users</title>
+	<title>Quản lý nhân viên</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -164,16 +164,16 @@ foreach($results as $result)
                                             
                                             <?php if($result->status == 1)
                                                     {?>
-                                                    <a href="userlist.php?confirm=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Un-Confirm the Account')">Confirmed <i class="fa fa-check-circle"></i></a> 
+                                                    <a href="userlist.php?confirm=<?php echo htmlentities($result->id);?>" onclick="return confirm('Bạn muốn vô hiệu hoá tài khoản này?')">Đang hoạt động <i class="fa fa-check-circle"></i></a> 
                                                     <?php } else {?>
-                                                    <a href="userlist.php?unconfirm=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Confirm the Account')">Un-Confirmed <i class="fa fa-times-circle"></i></a>
+                                                    <a href="userlist.php?unconfirm=<?php echo htmlentities($result->id);?>" onclick="return confirm('Bạn cố muốn kích hoạt tài khoản này?')">Vô hiệu hoá <i class="fa fa-times-circle"></i></a>
                                                     <?php } ?>
 </td>
                                             </td>
 											
 <td>
-<a href="edit-user.php?edit=<?php echo $result->id;?>" onclick="return confirm('Do you want to Edit');">&nbsp; <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;
-<a href="userlist.php?del=<?php echo $result->id;?>&name=<?php echo htmlentities($result->email);?>" onclick="return confirm('Do you want to Delete');"><i class="fa fa-trash" style="color:red"></i></a>&nbsp;&nbsp;
+<a href="edit-user.php?edit=<?php echo $result->id;?>" onclick="return confirm('Bạn muốn sửa nhân viên này?');">&nbsp; <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;
+<a href="userlist.php?del=<?php echo $result->id;?>&name=<?php echo htmlentities($result->email);?>" onclick="return confirm('Bạn muốn xoá tài khoản này?');"><i class="fa fa-trash" style="color:red"></i></a>&nbsp;&nbsp;
 </td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>

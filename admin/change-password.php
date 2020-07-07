@@ -26,10 +26,10 @@ $chngpwd1 = $dbh->prepare($con);
 $chngpwd1-> bindParam(':username', $username, PDO::PARAM_STR);
 $chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
 $chngpwd1->execute();
-$msg="Your Password succesfully changed";
+$msg="Đổi mật khẩu thành công";
 }
 else {
-$error="Your current password is not valid.";	
+$error="Mật khẩu hiện tại không đúng.";	
 }
 }
 ?>
@@ -45,7 +45,7 @@ $error="Your current password is not valid.";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>BBDMS | Admin Change Password</title>
+	<title>Thay đổi mật khẩu Admin</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -117,8 +117,8 @@ return true;
 										<form method="post" name="chngpwd" class="form-horizontal" onSubmit="return valid();">
 										
 											
-  	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+  	        	  <?php if($error){?><div class="errorWrap"><strong>LỖI</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+				else if($msg){?><div class="succWrap"><strong>THÀNH CÔNG</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 											<div class="form-group">
 												<label class="col-sm-4 control-label">Mật khẩu hiện tại</label>
 												<div class="col-sm-8">
