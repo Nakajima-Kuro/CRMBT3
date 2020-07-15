@@ -19,7 +19,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 		$query2->bindParam(':name', $name, PDO::PARAM_STR);
 		$query2->execute();
 
-		$msg = "Data Deleted successfully";
+		$msg = "Xoá thành công";
 	}
 
 	if (isset($_REQUEST['unconfirm'])) {
@@ -30,7 +30,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 		$query->bindParam(':status', $memstatus, PDO::PARAM_STR);
 		$query->bindParam(':aeid', $aeid, PDO::PARAM_STR);
 		$query->execute();
-		$msg = "Changes Sucessfully";
+		$msg = "Thay đổi thành công";
 	}
 
 	if (isset($_REQUEST['confirm'])) {
@@ -41,7 +41,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 		$query->bindParam(':status', $memstatus, PDO::PARAM_STR);
 		$query->bindParam(':aeid', $aeid, PDO::PARAM_STR);
 		$query->execute();
-		$msg = "Changes Sucessfully";
+		$msg = "Thay đổi thành công";
 	}
 
 
@@ -61,7 +61,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 		<meta name="author" content="">
 		<meta name="theme-color" content="#3e454c">
 
-		<title>Manage Users</title>
+		<title>Quản lí nhân viên</title>
 
 		<!-- Font awesome -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -152,24 +152,24 @@ if (strlen($_SESSION['alogin']) == 0) {
 												foreach ($results as $result) {				?>
 													<tr>
 														<td><?php echo htmlentities($cnt); ?></td>
-														<td><img src="../images/<?php echo htmlentities($result->image); ?>" style="width:50px; border-radius:50%;" /></td>
+														<td><img src="../images/<?php echo htmlentities($result->image) != null? $result->image : "default.jpg"; ?>" style="width:50px; border-radius:50%;" /></td>
 														<td><?php echo htmlentities($result->name); ?></td>
 														<td><?php echo htmlentities($result->email); ?></td>
-														<td><?php echo htmlentities($result->gender); ?></td>
+														<td><?php echo $result->gender == 'male'? "Nam" : "Nữ"; ?></td>
 														<td><?php echo htmlentities($result->mobile); ?></td>
 														<td><?php echo htmlentities($result->designation); ?>
 														<td>
 
 															<?php if ($result->status == 1) { ?>
-																<a href="userlist.php?confirm=<?php echo htmlentities($result->id); ?>" onclick="return confirm('Do you really want to Un-Confirm the Account')">Confirmed <i class="fa fa-check-circle"></i></a>
+																<a href="userlist.php?confirm=<?php echo htmlentities($result->id); ?>" onclick="return confirm('Bạn có muốn khoá tài khoản này')">Kích hoạt <i class="fa fa-check-circle"></i></a>
 															<?php } else { ?>
-																<a href="userlist.php?unconfirm=<?php echo htmlentities($result->id); ?>" onclick="return confirm('Do you really want to Confirm the Account')">Un-Confirmed <i class="fa fa-times-circle"></i></a>
+																<a href="userlist.php?unconfirm=<?php echo htmlentities($result->id); ?>" onclick="return confirm('Bạn có muốn kích hoạt lại tài khoản?')">Khoá <i class="fa fa-times-circle"></i></a>
 															<?php } ?>
 														</td>
 														</td>
 
 														<td>
-															<a href="edit-user.php?edit=<?php echo $result->id; ?>" onclick="return confirm('Do you want to Edit');">&nbsp; <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;
+															<a href="edit-user.php?edit=<?php echo $result->id; ?>" onclick="return confirm('Bạn có muốn thay đổi');">&nbsp; <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;
 															<a href="userlist.php?del=<?php echo $result->id; ?>&name=<?php echo htmlentities($result->email); ?>" onclick="return confirm('Do you want to Delete');"><i class="fa fa-trash" style="color:red"></i></a>&nbsp;&nbsp;
 														</td>
 													</tr>

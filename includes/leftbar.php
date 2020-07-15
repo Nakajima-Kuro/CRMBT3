@@ -14,5 +14,5 @@
 			<li><a href="meeting.php"><i class="fa fa-users"></i> &nbsp;Họp onine</a>
 			</li>
 		</ul>
-		<p class="text-center" style="color:#ffffff; margin-top: 100px;">All right served</p>
+		<!-- <p class="text-center" style="color:#ffffff; margin-top: 100px;">All right served</p> -->
 	</nav>

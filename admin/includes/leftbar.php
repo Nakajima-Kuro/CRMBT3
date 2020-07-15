@@ -14,8 +14,10 @@
 			</li>
 			<li><a href="deleteduser.php"><i class="fa fa-user-times"></i>Danh sách nhân viên đã xoá</a>
 			</li>
+			<li><a href="meeting.php"><i class="fa fa-users"></i>Họp Online</a>
+			</li>
 			</ul>
-			<p class="text-center" style="color:#ffffff; margin-top: 100px;">All right served</p>
+			<!-- <p class="text-center" style="color:#ffffff; margin-top: 100px;">All right served</p> -->
 		</nav>
 
 		

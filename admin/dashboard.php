@@ -68,7 +68,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 														<div class="stat-panel-title text-uppercase">Nhân viên</div>
 													</div>
 												</div>
-												<a href="userlist.php" class="block-anchor panel-footer">Chi tiết<i class="fa fa-arrow-right"></i></a>
+												<a href="userlist.php" class="block-anchor panel-footer text-center">Chi tiết<i class="fa fa-arrow-right"></i></a>
 											</div>
 										</div>
 										<div class="col-md-3">
