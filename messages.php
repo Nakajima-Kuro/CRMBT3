@@ -63,6 +63,15 @@ else{
 </head>
 
 <body>
+	<?php
+			$email = $_SESSION['alogin'];
+			$sql = "SELECT u.*, p.name as position_name from users u inner join position p on p.id = u.position_id where u.email = (:email);";
+			$query = $dbh -> prepare($sql);
+			$query-> bindParam(':email', $email, PDO::PARAM_STR);
+			$query->execute();
+			$result=$query->fetch(PDO::FETCH_OBJ);
+			$cnt=1;	
+	?>
 	<?php include('includes/header.php');?>
 
 	<div class="ts-main-content">
@@ -129,8 +138,6 @@ foreach($results as $result)
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>
 	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {          

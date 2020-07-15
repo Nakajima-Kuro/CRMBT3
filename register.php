@@ -14,7 +14,7 @@ $email=$_POST['email'];
 $password=md5($_POST['password']);
 $gender=$_POST['gender'];
 $mobileno=$_POST['mobileno'];
-$designation=$_POST['designation'];
+$position=$_POST['position'];
 
 if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
@@ -31,20 +31,20 @@ $querynoti-> bindParam(':notireciver',$reciver, PDO::PARAM_STR);
 $querynoti-> bindParam(':notitype', $notitype, PDO::PARAM_STR);
 $querynoti->execute();    
     
-$sql ="INSERT INTO users(name,email, password, gender, mobile, designation, image, status) VALUES(:name, :email, :password, :gender, :mobileno, :designation, :image, 1)";
+$sql ="INSERT INTO users(name,email, password, gender, mobile, position_id, image, status) VALUES(:name, :email, :password, :gender, :mobileno, :position, :image, 1)";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':name', $name, PDO::PARAM_STR);
 $query-> bindParam(':email', $email, PDO::PARAM_STR);
 $query-> bindParam(':password', $password, PDO::PARAM_STR);
 $query-> bindParam(':gender', $gender, PDO::PARAM_STR);
 $query-> bindParam(':mobileno', $mobileno, PDO::PARAM_STR);
-$query-> bindParam(':designation', $designation, PDO::PARAM_STR);
+$query-> bindParam(':position', $position, PDO::PARAM_STR);
 $query-> bindParam(':image', $image, PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-echo "<script type='text/javascript'>alert('Registration Sucessfull!');</script>";
+echo "<script type='text/javascript'>alert('Đăng ký thành công');</script>";
 echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
 }
 else 
@@ -128,7 +128,23 @@ $error="Có lỗi xảy ra. Vui lòng thử lại sau.";
 
                             <label class="col-sm-1 control-label">Chức vụ<span style="color:red">*</span></label>
                             <div class="col-sm-5">
-                            <input type="text" name="designation" class="form-control" required>
+                            <select name="position" class="form-control" required>
+                                            <option value="">Chọn</option>
+                                            <?php
+                                            $reciver = $_SESSION['alogin'];
+                                            $sql = "SELECT id, name from  position";
+                                            $query = $dbh->prepare($sql);
+                                            $query->execute();
+                                            $results = $query->fetchAll(PDO::FETCH_OBJ);
+                                            if ($query->rowCount() > 0) {
+                                                foreach ($results as $result) {                ?>
+                                                    <option value="<?php echo htmlentities($result->id); ?>">
+                                                        <?php echo htmlentities($result->name); ?>
+                                                    </option>
+                                            <?php
+                                                }
+                                            } ?>
+                                        </select>
                             </div>
                             </div>
 
@@ -137,8 +153,8 @@ $error="Có lỗi xảy ra. Vui lòng thử lại sau.";
                             <div class="col-sm-5">
                             <select name="gender" class="form-control" required>
                             <option value="">Chọn</option>
-                            <option value="Male">Nam</option>
-                            <option value="Female">Nữ</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
                             </select>
                             </div>
 
@@ -175,8 +191,6 @@ $error="Có lỗi xảy ra. Vui lòng thử lại sau.";
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>
 	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 
 </body>

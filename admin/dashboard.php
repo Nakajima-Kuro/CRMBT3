@@ -49,7 +49,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 					<div class="row">
 						<div class="col-md-12">
 
-							<h2 class="page-title">Trang chủ</h2>
+							<h2 class="page-title"><i class="fa fa-home"></i> Trang chủ</h2>
 
 							<div class="row">
 								<div class="col-md-12">
@@ -136,15 +136,21 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</div>
 										<div class="row">
 											<div class="col-sm-6">
-												<h4 class="text-center">Top 10 vị trí có nhân viên nhiều nhất</h4>
-												<canvas id="positionChart"></canvas>
-											</div>
-											<div class="col-sm-6">
 												<h4 class="text-center">Phân bổ nhân viên theo phòng ban</h4>
 												<canvas id="departmentChart"></canvas>
 											</div>
+											<div class="col-sm-6">
+												<h4 class="text-center">Phân bổ nhân viên theo giới tính</h4>
+												<canvas id="genderChart"></canvas>
+											</div>
+											
+										</div>
+										<div>
+											<h4 class="text-center">Top 10 vị trí có nhân viên nhiều nhất</h4>
+											<canvas id="positionChart"></canvas>
 										</div>
 									</div>
+									
 								</div>
 							</div>
 						</div>
@@ -155,14 +161,13 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 		<!-- Loading Scripts -->
 		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dataTables.min.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.dataTables.min.js"></script>
 		<script src="js/dataTables.bootstrap.min.js"></script>
 		<script src="js/Chart.min.js"></script>
-		<script src="js/fileinput.js"></script>
-		<!-- <script src="js/chartData.js"></script> -->
 		<script src="js/main.js"></script>
+		<script src="js/viewEmp.js"></script>
 
 		<script type="text/javascript">
 			window.onload = function() {
@@ -170,6 +175,10 @@ if (strlen($_SESSION['alogin']) == 0) {
 				var empNum = new Array();
 				var departments = new Array();
 				var empNumByDepartment = new Array();
+				var gender = new Array();
+				var empNumByGender = new Array();
+
+				
 				<?php
 				$sql7 = "SELECT p.name as name, count(u.id) as num from users u 
 					inner join position p on p.id = u.position_id group by p.id having count(u.id) > 0 order by count(u.id) desc limit 10;";
@@ -198,7 +207,11 @@ if (strlen($_SESSION['alogin']) == 0) {
 								'rgba(255, 206, 86, 0.2)',
 								'rgba(75, 192, 192, 0.2)',
 								'rgba(153, 102, 255, 0.2)',
-								'rgba(255, 159, 64, 0.2)'
+								'rgba(255, 159, 64, 0.2)',
+								'rgba(255, 135, 120, 0.4)',
+								'rgba( 245, 180, 130, 0.4)',
+								'rgba(245, 238, 164, 0.4)',
+								'rgba(187, 255, 115, 0.4)'
 							],
 							borderColor: [
 								'rgba(255, 99, 132, 1)',
@@ -208,18 +221,40 @@ if (strlen($_SESSION['alogin']) == 0) {
 								'rgba(153, 102, 255, 1)',
 								'rgba(255, 159, 64, 1)'
 							],
-							borderWidth: 1
+							borderWidth: 1,
+							barThickness: 60
 						}]
 					},
 					options: {
 						legend: {
 							display: false
 						},
+						elements: {
+							center: {
+								text: "<?php echo $bg; ?>",
+								color: '#FF6384', // Default is #000000
+								fontStyle: 'Arial', // Default is Arial
+								sidePadding: 20, // Default is 20 (as a percentage)
+								minFontSize: 25, // Default is 20 (in px), set to false and text will not wrap.
+								lineHeight: 25
+							}
+						},
 						scales: {
 							yAxes: [{
 								ticks: {
 									beginAtZero: true
+								},
+								gridLines: {
+									display: false
 								}
+							}],
+							xAxes: [{
+								ticks: {
+									beginAtZero: true
+								},
+								// gridLines: {
+								// 	display: false
+								// }
 							}]
 						}
 					}
@@ -246,7 +281,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 					data: {
 						labels: departments,
 						datasets: [{
-							label: '# of Votes',
+							label: 'Số lượng nhân viên',
 							data: empNumByDepartment,
 							backgroundColor: [
 								'rgba(255, 99, 132, 0.2)',
@@ -254,7 +289,10 @@ if (strlen($_SESSION['alogin']) == 0) {
 								'rgba(255, 206, 86, 0.2)',
 								'rgba(75, 192, 192, 0.2)',
 								'rgba(153, 102, 255, 0.2)',
-								'rgba(255, 159, 64, 0.2)'
+								'rgba(255, 159, 64, 0.2)',
+								'#FF8778',
+								'#FFCE5C',
+								'#BBFF73'
 							],
 							borderColor: [
 								'rgba(255, 99, 132, 1)',
@@ -262,7 +300,52 @@ if (strlen($_SESSION['alogin']) == 0) {
 								'rgba(255, 206, 86, 1)',
 								'rgba(75, 192, 192, 1)',
 								'rgba(153, 102, 255, 1)',
-								'rgba(255, 159, 64, 1)'
+								'rgba(255, 159, 64, 1)',
+								
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales:
+						{
+							yAxes: [{
+								display: false
+							}]
+						},
+						cutoutPercentage: 70
+					}
+				});
+				
+				<?php
+				$sql9 = "SELECT u.gender, count(u.id) as num from users u 
+					group by u.gender;";
+				$query9 = $dbh->prepare($sql9);
+				$query9->execute();
+				$results9 = $query9->fetchAll(PDO::FETCH_OBJ);
+				foreach ($results9 as $var) {
+					echo 'gender.push("' . $var->gender . '");';
+				};
+				foreach ($results9 as $var) {
+					echo 'empNumByGender.push("' . $var->num . '");';
+				};
+				?>
+
+				var ctx3 = document.getElementById("genderChart").getContext("2d");
+				var mydChart1 = new Chart(ctx3, {
+					type: 'doughnut',
+					data: {
+						labels: gender,
+						datasets: [{
+							label: 'Số lượng nhân viên',
+							data: empNumByGender,
+							backgroundColor: [
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(54, 162, 235, 0.2)'
+							],
+							borderColor: [
+								'rgba(255, 99, 132, 1)',
+								'rgba(54, 162, 235, 1)'
 							],
 							borderWidth: 1
 						}]
@@ -270,15 +353,18 @@ if (strlen($_SESSION['alogin']) == 0) {
 					options: {
 						scales: {
 							yAxes: [{
-								ticks: {
-									beginAtZero: true
-								}
+								display: false
 							}]
-						}
+						},
+						cutoutPercentage: 70
 					}
 				});
 
-			}
+				viewEmployee(document.getElementById("departmentChart"), mydChart);
+				viewEmployee(document.getElementById("genderChart"), mydChart1);
+				viewEmployee(document.getElementById("positionChart"), myChart);
+		}
+
 		</script>
 	</body>
 

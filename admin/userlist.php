@@ -11,6 +11,7 @@ if(isset($_GET['del']) && isset($_GET['name']))
 {
 $id=$_GET['del'];
 $name=$_GET['name'];
+$searchEmp = $_GET['searchEmp'];
 
 $sql = "delete from users WHERE id=:id";
 $query = $dbh->prepare($sql);
@@ -135,15 +136,16 @@ if(isset($_REQUEST['unconfirm']))
                                                 <th>Email</th>
                                                 <th>Giới tính</th>
                                                 <th>Điện thoại</th>
-                                                <th>Designation</th>
+												<th>Chức vụ</th>
+												<th>Phòng ban</th>
                                                 <th>Tài khoản</th>
-											<th>Action</th>	
+											<th>Thao tác</th>	
 										</tr>
 									</thead>
 									
 									<tbody>
 
-<?php $sql = "SELECT * from  users ";
+<?php $sql = "SELECT u.*, p.name as position_name, d.name as department_name from  users u inner join position p on p.id = u.position_id inner join department d on d.id = p.department_id";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -154,25 +156,26 @@ foreach($results as $result)
 {				?>	
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-											<td><img src="../images/<?php echo htmlentities($result->image);?>" style="width:50px; border-radius:50%;"/></td>
+											<td><img src="../images/<?php echo $result->image ? htmlentities($result->image) : "user.jpg";?>" style="width:50px; border-radius:50%;"/></td>
                                             <td><?php echo htmlentities($result->name);?></td>
                                             <td><?php echo htmlentities($result->email);?></td>
                                             <td><?php echo htmlentities($result->gender);?></td>
                                             <td><?php echo htmlentities($result->mobile);?></td>
-                                            <td><?php echo htmlentities($result->designation);?> 
+											<td><?php echo htmlentities($result->position_name);?> 
+											<td><?php echo htmlentities($result->department_name);?>
                                             <td>
                                             
                                             <?php if($result->status == 1)
                                                     {?>
-                                                    <a href="userlist.php?confirm=<?php echo htmlentities($result->id);?>" onclick="return confirm('Bạn muốn vô hiệu hoá tài khoản này?')">Đang hoạt động <i class="fa fa-check-circle"></i></a> 
+                                                    <a class="blue" href="userlist.php?confirm=<?php echo htmlentities($result->id);?>" onclick="return confirm('Bạn muốn vô hiệu hoá tài khoản này?')">Đang hoạt động <i class="fa fa-check-circle"></i></a> 
                                                     <?php } else {?>
-                                                    <a href="userlist.php?unconfirm=<?php echo htmlentities($result->id);?>" onclick="return confirm('Bạn cố muốn kích hoạt tài khoản này?')">Vô hiệu hoá <i class="fa fa-times-circle"></i></a>
+                                                    <a class="blue" href="userlist.php?unconfirm=<?php echo htmlentities($result->id);?>" onclick="return confirm('Bạn cố muốn kích hoạt tài khoản này?')">Vô hiệu hoá <i class="fa fa-times-circle"></i></a>
                                                     <?php } ?>
 </td>
                                             </td>
 											
 <td>
-<a href="edit-user.php?edit=<?php echo $result->id;?>" onclick="return confirm('Bạn muốn sửa nhân viên này?');">&nbsp; <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;
+<a class="blue" href="edit-user.php?edit=<?php echo $result->id;?>" onclick="return confirm('Bạn muốn sửa nhân viên này?');">&nbsp; <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;
 <a href="userlist.php?del=<?php echo $result->id;?>&name=<?php echo htmlentities($result->email);?>" onclick="return confirm('Bạn muốn xoá tài khoản này?');"><i class="fa fa-trash" style="color:red"></i></a>&nbsp;&nbsp;
 </td>
 										</tr>
@@ -196,15 +199,19 @@ foreach($results as $result)
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>
 	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {          
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
+					const queryString = window.location.search;
+					const urlParams = new URLSearchParams(queryString);
+					const searchEmp = urlParams.get('searchEmp');
+					if(searchEmp) {
+						document.getElementById('searchEmp').value = searchEmp;
+						var table = $("#zctb").dataTable();
+						table.fnFilter(searchEmp);
+					}
 					});
+					
 		</script>
 		
 </body>

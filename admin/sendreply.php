@@ -107,9 +107,9 @@ else{
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-12">
-                            <h2>Trả lời phản hồi</h2>
+                            <h2 class="text-center">Trả lời phản hồi</h2>
 								<div class="panel panel-default">
-									<div class="panel-heading">Sửa thông tin</div>
+									<div class="panel-heading">Nội dung phản hồi</div>
 <?php if($error){?><div class="errorWrap"><strong>LỖI</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>THÀNH CÔNG</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
@@ -119,7 +119,7 @@ else{
 <div class="form-group">
 	<label class="col-sm-2 control-label">Email<span style="color:red">*</span></label>
 	<div class="col-sm-4">
-	<input type="text" name="email" class="form-control" readonly required value="<?php echo htmlentities($replyto);?>">
+	<input type="text" name="email" class="form-control" readonly required value="<?php echo htmlentities($replyto);?>" <?php if($replyto) echo "disabled" ?>>
 	</div>
 </div>
 
@@ -156,8 +156,6 @@ else{
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>
 	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {          

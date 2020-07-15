@@ -28,7 +28,7 @@ if(isset($_POST['submit']))
 			$image=$final_file;
 		}
 
-	$sql="UPDATE users SET name=(:name), email=(:email), mobile=(:mobileno), designation=(:designation), Image=(:image) WHERE id=(:idedit)";
+	$sql="UPDATE users SET name=(:name), email=(:email), mobile=(:mobileno), position=(:position), Image=(:image) WHERE id=(:idedit)";
 	$query = $dbh->prepare($sql);
 	$query-> bindParam(':name', $name, PDO::PARAM_STR);
 	$query-> bindParam(':email', $email, PDO::PARAM_STR);
@@ -37,7 +37,7 @@ if(isset($_POST['submit']))
 	$query-> bindParam(':image', $image, PDO::PARAM_STR);
 	$query-> bindParam(':idedit', $idedit, PDO::PARAM_STR);
 	$query->execute();
-	$msg="Information Updated Successfully";
+	$msg="Cập nhật thành công";
 }    
 ?> -->
 
@@ -97,7 +97,7 @@ if(isset($_POST['submit']))
 <body>
 <?php
 		$email = $_SESSION['alogin'];
-		$sql = "SELECT * from users where email = (:email);";
+		$sql = "SELECT u.*, p.name as position_name from users u inner join position p on p.id = u.position_id where u.email = (:email);";
 		$query = $dbh -> prepare($sql);
 		$query-> bindParam(':email', $email, PDO::PARAM_STR);
 		$query->execute();
@@ -151,7 +151,7 @@ if(isset($_POST['submit']))
 
 	<label class="col-sm-2 control-label">Chức vụ</label>
 	<div class="col-sm-4">
-	<input type="text" name="designation" class="form-control" value="<?php echo htmlentities($result->designation);?>" disabled>
+	<input type="text" name="position" class="form-control" value="<?php echo htmlentities($result->position_name);?>" disabled>
 	</div>
 </div>
 <input type="hidden" name="editid" class="form-control" required value="<?php echo htmlentities($result->id);?>">
@@ -174,8 +174,6 @@ if(isset($_POST['submit']))
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>
 	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {          

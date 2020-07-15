@@ -63,6 +63,15 @@ else{
 </head>
 
 <body>
+	<?php
+			$email = $_SESSION['alogin'];
+			$sql = "SELECT u.*, p.name as position_name from users u inner join position p on p.id = u.position_id where u.email = (:email);";
+			$query = $dbh -> prepare($sql);
+			$query-> bindParam(':email', $email, PDO::PARAM_STR);
+			$query->execute();
+			$result=$query->fetch(PDO::FETCH_OBJ);
+			$cnt=1;	
+	?>
 	<?php include('includes/header.php');?>
 	<div class="ts-main-content">
 	<?php include('includes/leftbar.php');?>
@@ -87,7 +96,8 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{				?>	
+{				
+		?>	
         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo htmlentities($result->time);?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo htmlentities($result->notiuser);?> -----> <?php echo htmlentities($result->notitype);?></h5>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
@@ -107,8 +117,6 @@ foreach($results as $result)
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>
 	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {          

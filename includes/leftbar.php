@@ -1,7 +1,7 @@
-	<nav class="ts-sidebar">
+	<nav class="ts-sidebar" style="font-size: 20px;">
 			<ul class="ts-sidebar-menu">
 			
-			<li class="ts-label">Main</li>
+			<li class="ts-label">MENU</li>
 			<li><a href="profile.php"><i class="fa fa-user"></i> &nbsp;Thông tin cá nhân</a>
 			</li>
 			<li><a href="feedback.php"><i class="fa fa-envelope"></i> &nbsp;Phản hồi</a>
@@ -11,7 +11,6 @@
 			<li><a href="messages.php"><i class="fa fa-envelope"></i> &nbsp;Tin nhắn</a>
 			</li>
 			</ul>
-			<p class="text-center" style="color:#ffffff; margin-top: 100px;">All right served</p>
 		</nav>
 
 		

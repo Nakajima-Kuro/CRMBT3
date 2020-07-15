@@ -27,66 +27,67 @@ echo "<script type='text/javascript'> document.location = 'profile.php'; </scrip
 
 ?>
 <!doctype html>
-<html lang="en" class="no-js">
-
+<html lang="en">
+ 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
 
-	
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap-social.css">
-	<link rel="stylesheet" href="css/bootstrap-select.css">
-	<link rel="stylesheet" href="css/fileinput.min.css">
-	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
-	<link rel="stylesheet" href="css/style.css">
-
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
 </head>
 
 <body>
-	<div class="login-page bk-img">
-		<div class="form-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold mt-4x">Đăng nhập</h1>
-						<div class="well row pt-2x pb-3x bk-light">
-							<div class="col-md-8 col-md-offset-2">
-								<form method="post">
-
-									<label for="" class="text-uppercase text-sm">Tên đăng nhập</label>
-									<input type="text" placeholder="Tên đăng nhập" name="username" class="form-control mb" required>
-
-									<label for="" class="text-uppercase text-sm">Mật khẩu</label>
-									<input type="password" placeholder="Mật khẩu" name="password" class="form-control mb" required>
-									<button class="btn btn-primary btn-block" name="login" type="submit">ĐĂNG NHẬP</button>
-								</form>
-								<br>
-								<p>Bạn chưa có tài khoản? <a href="register.php" >Đăng ký</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
-
+    <!-- ============================================================== -->
+    <!-- login page  -->
+    <!-- ============================================================== -->
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"><a href="."><img class="logo-img" src="./images/php.png" alt="logo"></a><span class="splash-description">Trang web quản lý nhân viên</span></div>
+            <div class="card-body">
+                <form method="post" style="background-color: white">
+                    <div class="form-group">
+                        <input for="" class="form-control form-control-lg" name="username" type="text" placeholder="Tên đăng nhập" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="password" type="password" placeholder="Mật khẩu">
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-block" name="login" type="submit">ĐĂNG NHẬP</button>
+                </form>
+            </div>
+            <div class="card-footer bg-white p-0">
+                <div class="card-footer-item card-footer-item-bordered text-center">
+					 <p>Bạn chưa có tài khoản? <a href="register.php" >Đăng ký</a></p>
+            </div>
+        </div>
+    </div>
+  
+    <!-- ============================================================== -->
+    <!-- end login page  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="./css/jquery-3.3.1.min.js"></script>
+    <script src="./css/bootstrap.bundle.js"></script>
 </body>
+ 
+</html>
 
 </html>

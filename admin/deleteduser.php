@@ -86,21 +86,22 @@ else{
 										<tr>
 										       <th>#</th>
 												<th>Email</th>
-												<th>Thời gian xoá</th>
+												<th>Thời gian nghỉ việc</th>
 										</tr>
 									</thead>
 									
 									<tbody>
 
-<?php $sql = "SELECT * from  deleteduser";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{				?>	
+									<?php $sql = "SELECT * from  deleteduser";
+									$query = $dbh -> prepare($sql);
+									$query->execute();
+									$results=$query->fetchAll(PDO::FETCH_OBJ);
+									$cnt=1;
+									if($query->rowCount() > 0)
+									{
+									foreach($results as $result)
+									{				?>	
+									
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
                                             <td><?php echo htmlentities($result->email);?></td>

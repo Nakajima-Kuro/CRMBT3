@@ -115,8 +115,7 @@ return true;
 									<div class="panel-heading">Các trường thông tin</div>
 									<div class="panel-body">
 										<form method="post" name="chngpwd" class="form-horizontal" onSubmit="return valid();">
-										
-											
+					
   	        	  <?php if($error){?><div class="errorWrap"><strong>LỖI</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>THÀNH CÔNG</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 											<div class="form-group">
@@ -177,8 +176,6 @@ return true;
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>
 	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {          

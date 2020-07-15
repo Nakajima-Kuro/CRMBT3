@@ -15,12 +15,10 @@ if($query->rowCount() > 0)
 {
 $_SESSION['alogin']=$_POST['username'];
 echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-} else{
-  
-  echo "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng');</script>";
-
+} 
+else{
+ 	echo "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng');</script>";
 }
-
 }
 
 ?>
@@ -55,13 +53,10 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
+									<input type="text" placeholder="Tên đăng nhập" name="username" class="form-control mb" required autocomplete="off">
 
-									<label for="" class="text-uppercase text-sm">Tên đăng nhập </label>
-									<input type="text" placeholder="Tên đăng nhập" name="username" class="form-control mb" required>
-
-									<label for="" class="text-uppercase text-sm">Password</label>
 									<input type="password" placeholder="Mật khẩu" name="password" class="form-control mb" required>
-									<button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
+									<button class="btn btn-primary btn-block" name="login" type="submit">ĐĂNG NHẬP</button>
 								</form>
 							</div>
 						</div>
@@ -78,8 +73,6 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>
 	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 
 </body>
