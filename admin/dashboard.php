@@ -17,7 +17,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 		<meta name="author" content="">
 		<meta name="theme-color" content="#3e454c">
 
-		<title>Admin Dashboard</title>
+		<title>Quản trị</title>
 
 		<!-- Font awesome -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -48,7 +48,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 					<div class="row">
 						<div class="col-md-12">
 
-							<h2 class="page-title">Dashboard</h2>
+							<h2 class="page-title">Trang chủ</h2>
 
 							<div class="row">
 								<div class="col-md-12">
@@ -180,8 +180,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 				var departments = new Array();
 				var empNumByDepartment = new Array();
 				<?php
-				$sql7 = "SELECT p.name as name, count(u.id) as num from users u 
-                    inner join position p on p.id = u.position group by p.id having count(u.id) > 0 order by count(u.id) desc limit 8;";
+				$sql7 = "SELECT p.name AS name, count(u.id) AS num FROM users u 
+                    inner join position p on p.id = u.position GROUP BY p.id HAVING count(u.id) > 0 ORDER BY count(u.id) desc limit 8;";
 				$query7 = $dbh->prepare($sql7);
 				$query7->execute();
 				$results7 = $query7->fetchAll(PDO::FETCH_OBJ);

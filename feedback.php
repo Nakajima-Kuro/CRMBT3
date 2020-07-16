@@ -43,7 +43,7 @@ if(isset($_POST['submit']))
 	$query-> bindParam(':description', $description, PDO::PARAM_STR);
 	$query-> bindParam(':attachment', $attachment, PDO::PARAM_STR);
     $query->execute(); 
-	$msg="Feedback Send";
+	$msg="Gửi phản hồi thành công!";
 }    
 ?>
 
